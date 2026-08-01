@@ -2,7 +2,10 @@ import sqlite3
 import pandas as pd
 import os
 
-DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fleet.db")
+if os.environ.get("VERCEL"):
+    DB_PATH = "/tmp/fleet.db"
+else:
+    DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fleet.db")
 
 def get_db_connection():
     """Returns a connection to the SQLite database."""
