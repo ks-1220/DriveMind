@@ -218,7 +218,23 @@ frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fronte
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
-# Root route: serve frontend from container path
+# Serve app.css and app.js at the paths referenced by the frontend HTML
+@app.get("/app.css")
+def serve_app_css():
+    return FileResponse(os.path.join(FRONTEND_PATH, "app.css"))
+
+@app.get("/app.js")
+def serve_app_js():
+    return FileResponse(os.path.join(FRONTEND_PATH, "app.js"))
+
+# Expose frontend static_data directory at /static_data
+app.mount(
+    "/static_data",
+    StaticFiles(directory=os.path.join(FRONTEND_PATH, "static_data")),
+    name="static_data"
+)
+
+# Root route: serve frontend index
 @app.get("/")
 def serve_frontend():
     return FileResponse(
