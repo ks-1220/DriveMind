@@ -208,4 +208,10 @@ if os.path.exists(frontend_path):
     
     @app.get("/")
     def read_root():
-        return FileResponse(os.path.join(frontend_path, "index.html"))
+        return {
+            "status": "ok",
+            "cwd": os.getcwd(),
+            "frontend_exists": os.path.exists(frontend_path),
+            "index_exists": os.path.exists(os.path.join(frontend_path, "index.html"))
+        }
+
