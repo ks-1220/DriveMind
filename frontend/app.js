@@ -17,6 +17,7 @@ async function initApp() {
     setupEvaluationRunner();
     initHeroCanvas();
     initScrambleTitle();
+    initLiveViewers();
     
     // Fetch initial fleet data
     await fetchFleetInventory();
@@ -695,3 +696,19 @@ async function fetchDataSource() {
     }
 }
 
+// 6. Live Viewers simulation
+function initLiveViewers() {
+    const el = document.getElementById("viewer-count");
+    if (!el) return;
+    
+    let currentCount = 42;
+    
+    // Simulate minor fluctuations every 3-8 seconds
+    setInterval(() => {
+        // Randomly add or subtract 1 to 3 viewers
+        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        currentCount = Math.max(12, currentCount + change); // Keep a minimum
+        
+        el.innerText = currentCount;
+    }, Math.random() * 5000 + 3000);
+}
