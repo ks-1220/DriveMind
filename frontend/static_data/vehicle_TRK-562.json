@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "id": "TRK-562",
+    "manufacturer": "Freightliner",
+    "model": "Cascadia",
+    "year": 2022,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-562",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 39.2,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.3,
+      "EGR/Coolant Leak": 0.3,
+      "Turbocharger Underboost": 0.1,
+      "Electrical System Decay": 0.3
+    },
+    "predicted_rul": 34.9,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": -6.7,
+      "Exhaust Temperature": 38.4,
+      "Vibration & Mechanical": -0.1,
+      "Electrical / Voltage": 0.0,
+      "Oil Pressure": 0.8,
+      "Engine Load / RPM": 54.0
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 189.26,
+      "engine_rpm": 1298.64,
+      "oil_pressure": 48.58,
+      "engine_load": 53.87,
+      "vibration": 0.223,
+      "voltage": 13.88,
+      "exhaust_temp": 897.1
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-05-03",
+      "component": "Brakes",
+      "description": "Replaced front axle brake pads and inspected brake drums.",
+      "cost": 650.0
+    },
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

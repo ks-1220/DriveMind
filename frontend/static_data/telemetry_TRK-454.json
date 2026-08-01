@@ -1,0 +1,812 @@
+[
+  {
+    "timestamp": "2026-07-02 23:52:52.756178",
+    "coolant_temp": 184.92,
+    "vibration": 0.254,
+    "voltage": 13.84,
+    "exhaust_temp": 965.14,
+    "oil_pressure": 48.02,
+    "engine_load": 67.12
+  },
+  {
+    "timestamp": "2026-07-03 07:52:52.756178",
+    "coolant_temp": 185.29,
+    "vibration": 0.212,
+    "voltage": 13.93,
+    "exhaust_temp": 890.1,
+    "oil_pressure": 51.88,
+    "engine_load": 51.54
+  },
+  {
+    "timestamp": "2026-07-03 15:52:52.756178",
+    "coolant_temp": 190.32,
+    "vibration": 0.226,
+    "voltage": 13.92,
+    "exhaust_temp": 922.78,
+    "oil_pressure": 48.8,
+    "engine_load": 57.69
+  },
+  {
+    "timestamp": "2026-07-03 23:52:52.756178",
+    "coolant_temp": 191.66,
+    "vibration": 0.263,
+    "voltage": 13.91,
+    "exhaust_temp": 868.36,
+    "oil_pressure": 52.73,
+    "engine_load": 36.74
+  },
+  {
+    "timestamp": "2026-07-04 07:52:52.756178",
+    "coolant_temp": 190.15,
+    "vibration": 0.241,
+    "voltage": 13.87,
+    "exhaust_temp": 909.66,
+    "oil_pressure": 48.6,
+    "engine_load": 59.44
+  },
+  {
+    "timestamp": "2026-07-04 15:52:52.756178",
+    "coolant_temp": 187.92,
+    "vibration": 0.242,
+    "voltage": 13.87,
+    "exhaust_temp": 957.9,
+    "oil_pressure": 51.79,
+    "engine_load": 67.9
+  },
+  {
+    "timestamp": "2026-07-04 23:52:52.756178",
+    "coolant_temp": 187.49,
+    "vibration": 0.286,
+    "voltage": 13.92,
+    "exhaust_temp": 940.65,
+    "oil_pressure": 47.62,
+    "engine_load": 64.47
+  },
+  {
+    "timestamp": "2026-07-05 07:52:52.756178",
+    "coolant_temp": 189.61,
+    "vibration": 0.255,
+    "voltage": 13.87,
+    "exhaust_temp": 907.3,
+    "oil_pressure": 49.71,
+    "engine_load": 59.28
+  },
+  {
+    "timestamp": "2026-07-05 15:52:52.756178",
+    "coolant_temp": 189.74,
+    "vibration": 0.272,
+    "voltage": 13.98,
+    "exhaust_temp": 914.92,
+    "oil_pressure": 48.39,
+    "engine_load": 52.13
+  },
+  {
+    "timestamp": "2026-07-05 23:52:52.756178",
+    "coolant_temp": 194.89,
+    "vibration": 0.289,
+    "voltage": 13.87,
+    "exhaust_temp": 850.06,
+    "oil_pressure": 49.59,
+    "engine_load": 38.43
+  },
+  {
+    "timestamp": "2026-07-06 07:52:52.756178",
+    "coolant_temp": 188.05,
+    "vibration": 0.28,
+    "voltage": 13.86,
+    "exhaust_temp": 866.62,
+    "oil_pressure": 50.07,
+    "engine_load": 37.7
+  },
+  {
+    "timestamp": "2026-07-06 15:52:52.756178",
+    "coolant_temp": 185.33,
+    "vibration": 0.232,
+    "voltage": 13.96,
+    "exhaust_temp": 900.81,
+    "oil_pressure": 51.67,
+    "engine_load": 56.32
+  },
+  {
+    "timestamp": "2026-07-06 23:52:52.756178",
+    "coolant_temp": 195.02,
+    "vibration": 0.296,
+    "voltage": 13.9,
+    "exhaust_temp": 930.56,
+    "oil_pressure": 48.59,
+    "engine_load": 57.49
+  },
+  {
+    "timestamp": "2026-07-07 07:52:52.756178",
+    "coolant_temp": 187.24,
+    "vibration": 0.245,
+    "voltage": 13.86,
+    "exhaust_temp": 885.14,
+    "oil_pressure": 47.17,
+    "engine_load": 38.87
+  },
+  {
+    "timestamp": "2026-07-07 15:52:52.756178",
+    "coolant_temp": 193.27,
+    "vibration": 0.293,
+    "voltage": 13.88,
+    "exhaust_temp": 992.29,
+    "oil_pressure": 47.82,
+    "engine_load": 74.7
+  },
+  {
+    "timestamp": "2026-07-07 23:52:52.756178",
+    "coolant_temp": 190.43,
+    "vibration": 0.276,
+    "voltage": 13.91,
+    "exhaust_temp": 863.41,
+    "oil_pressure": 50.79,
+    "engine_load": 38.56
+  },
+  {
+    "timestamp": "2026-07-08 07:52:52.756178",
+    "coolant_temp": 192.12,
+    "vibration": 0.294,
+    "voltage": 13.83,
+    "exhaust_temp": 837.97,
+    "oil_pressure": 48.43,
+    "engine_load": 38.51
+  },
+  {
+    "timestamp": "2026-07-08 15:52:52.756178",
+    "coolant_temp": 191.52,
+    "vibration": 0.252,
+    "voltage": 13.9,
+    "exhaust_temp": 939.65,
+    "oil_pressure": 45.69,
+    "engine_load": 59.02
+  },
+  {
+    "timestamp": "2026-07-08 23:52:52.756178",
+    "coolant_temp": 190.25,
+    "vibration": 0.281,
+    "voltage": 13.89,
+    "exhaust_temp": 949.15,
+    "oil_pressure": 51.84,
+    "engine_load": 69.72
+  },
+  {
+    "timestamp": "2026-07-09 07:52:52.756178",
+    "coolant_temp": 192.98,
+    "vibration": 0.269,
+    "voltage": 13.9,
+    "exhaust_temp": 875.69,
+    "oil_pressure": 48.49,
+    "engine_load": 41.94
+  },
+  {
+    "timestamp": "2026-07-09 15:52:52.756178",
+    "coolant_temp": 193.26,
+    "vibration": 0.276,
+    "voltage": 13.94,
+    "exhaust_temp": 927.91,
+    "oil_pressure": 49.95,
+    "engine_load": 59.25
+  },
+  {
+    "timestamp": "2026-07-09 23:52:52.756178",
+    "coolant_temp": 186.06,
+    "vibration": 0.207,
+    "voltage": 13.9,
+    "exhaust_temp": 907.05,
+    "oil_pressure": 49.39,
+    "engine_load": 49.7
+  },
+  {
+    "timestamp": "2026-07-10 07:52:52.756178",
+    "coolant_temp": 189.79,
+    "vibration": 0.211,
+    "voltage": 13.8,
+    "exhaust_temp": 889.6,
+    "oil_pressure": 50.13,
+    "engine_load": 52.58
+  },
+  {
+    "timestamp": "2026-07-10 15:52:52.756178",
+    "coolant_temp": 191.8,
+    "vibration": 0.206,
+    "voltage": 13.89,
+    "exhaust_temp": 895.6,
+    "oil_pressure": 52.44,
+    "engine_load": 41.08
+  },
+  {
+    "timestamp": "2026-07-10 23:52:52.756178",
+    "coolant_temp": 190.45,
+    "vibration": 0.206,
+    "voltage": 13.88,
+    "exhaust_temp": 940.47,
+    "oil_pressure": 48.77,
+    "engine_load": 62.69
+  },
+  {
+    "timestamp": "2026-07-11 07:52:52.756178",
+    "coolant_temp": 190.01,
+    "vibration": 0.262,
+    "voltage": 13.77,
+    "exhaust_temp": 905.77,
+    "oil_pressure": 52.38,
+    "engine_load": 47.25
+  },
+  {
+    "timestamp": "2026-07-11 15:52:52.756178",
+    "coolant_temp": 185.9,
+    "vibration": 0.273,
+    "voltage": 13.81,
+    "exhaust_temp": 945.66,
+    "oil_pressure": 47.66,
+    "engine_load": 68.1
+  },
+  {
+    "timestamp": "2026-07-11 23:52:52.756178",
+    "coolant_temp": 182.23,
+    "vibration": 0.222,
+    "voltage": 13.9,
+    "exhaust_temp": 927.93,
+    "oil_pressure": 50.78,
+    "engine_load": 56.41
+  },
+  {
+    "timestamp": "2026-07-12 07:52:52.756178",
+    "coolant_temp": 190.36,
+    "vibration": 0.249,
+    "voltage": 13.89,
+    "exhaust_temp": 860.12,
+    "oil_pressure": 52.39,
+    "engine_load": 38.92
+  },
+  {
+    "timestamp": "2026-07-12 15:52:52.756178",
+    "coolant_temp": 187.35,
+    "vibration": 0.239,
+    "voltage": 13.97,
+    "exhaust_temp": 896.97,
+    "oil_pressure": 53.42,
+    "engine_load": 50.04
+  },
+  {
+    "timestamp": "2026-07-12 23:52:52.756178",
+    "coolant_temp": 187.99,
+    "vibration": 0.284,
+    "voltage": 13.99,
+    "exhaust_temp": 917.92,
+    "oil_pressure": 48.79,
+    "engine_load": 45.19
+  },
+  {
+    "timestamp": "2026-07-13 07:52:52.756178",
+    "coolant_temp": 188.18,
+    "vibration": 0.261,
+    "voltage": 13.9,
+    "exhaust_temp": 920.1,
+    "oil_pressure": 50.6,
+    "engine_load": 60.47
+  },
+  {
+    "timestamp": "2026-07-13 15:52:52.756178",
+    "coolant_temp": 191.38,
+    "vibration": 0.208,
+    "voltage": 13.91,
+    "exhaust_temp": 854.52,
+    "oil_pressure": 54.03,
+    "engine_load": 36.67
+  },
+  {
+    "timestamp": "2026-07-13 23:52:52.756178",
+    "coolant_temp": 190.55,
+    "vibration": 0.277,
+    "voltage": 13.85,
+    "exhaust_temp": 905.01,
+    "oil_pressure": 48.06,
+    "engine_load": 48.99
+  },
+  {
+    "timestamp": "2026-07-14 07:52:52.756178",
+    "coolant_temp": 193.56,
+    "vibration": 0.238,
+    "voltage": 13.86,
+    "exhaust_temp": 925.12,
+    "oil_pressure": 51.99,
+    "engine_load": 59.99
+  },
+  {
+    "timestamp": "2026-07-14 15:52:52.756178",
+    "coolant_temp": 189.25,
+    "vibration": 0.253,
+    "voltage": 13.87,
+    "exhaust_temp": 946.19,
+    "oil_pressure": 51.11,
+    "engine_load": 60.76
+  },
+  {
+    "timestamp": "2026-07-14 23:52:52.756178",
+    "coolant_temp": 190.17,
+    "vibration": 0.266,
+    "voltage": 13.93,
+    "exhaust_temp": 946.94,
+    "oil_pressure": 53.06,
+    "engine_load": 67.47
+  },
+  {
+    "timestamp": "2026-07-15 07:52:52.756178",
+    "coolant_temp": 187.48,
+    "vibration": 0.261,
+    "voltage": 13.89,
+    "exhaust_temp": 903.58,
+    "oil_pressure": 46.07,
+    "engine_load": 52.58
+  },
+  {
+    "timestamp": "2026-07-15 15:52:52.756178",
+    "coolant_temp": 190.92,
+    "vibration": 0.285,
+    "voltage": 13.87,
+    "exhaust_temp": 955.86,
+    "oil_pressure": 51.72,
+    "engine_load": 69.45
+  },
+  {
+    "timestamp": "2026-07-15 23:52:52.756178",
+    "coolant_temp": 190.85,
+    "vibration": 0.273,
+    "voltage": 13.93,
+    "exhaust_temp": 973.64,
+    "oil_pressure": 53.21,
+    "engine_load": 68.68
+  },
+  {
+    "timestamp": "2026-07-16 07:52:52.756178",
+    "coolant_temp": 190.54,
+    "vibration": 0.221,
+    "voltage": 13.87,
+    "exhaust_temp": 971.71,
+    "oil_pressure": 50.8,
+    "engine_load": 67.71
+  },
+  {
+    "timestamp": "2026-07-16 15:52:52.756178",
+    "coolant_temp": 190.06,
+    "vibration": 0.251,
+    "voltage": 13.93,
+    "exhaust_temp": 899.43,
+    "oil_pressure": 53.4,
+    "engine_load": 58.61
+  },
+  {
+    "timestamp": "2026-07-16 23:52:52.756178",
+    "coolant_temp": 192.26,
+    "vibration": 0.246,
+    "voltage": 13.93,
+    "exhaust_temp": 871.07,
+    "oil_pressure": 52.58,
+    "engine_load": 41.4
+  },
+  {
+    "timestamp": "2026-07-17 07:52:52.756178",
+    "coolant_temp": 187.45,
+    "vibration": 0.273,
+    "voltage": 13.84,
+    "exhaust_temp": 928.28,
+    "oil_pressure": 51.18,
+    "engine_load": 57.2
+  },
+  {
+    "timestamp": "2026-07-17 15:52:52.756178",
+    "coolant_temp": 193.59,
+    "vibration": 0.204,
+    "voltage": 13.9,
+    "exhaust_temp": 934.55,
+    "oil_pressure": 49.73,
+    "engine_load": 65.44
+  },
+  {
+    "timestamp": "2026-07-17 23:52:52.756178",
+    "coolant_temp": 191.94,
+    "vibration": 0.215,
+    "voltage": 13.94,
+    "exhaust_temp": 888.64,
+    "oil_pressure": 50.84,
+    "engine_load": 48.08
+  },
+  {
+    "timestamp": "2026-07-18 07:52:52.756178",
+    "coolant_temp": 195.18,
+    "vibration": 0.241,
+    "voltage": 13.95,
+    "exhaust_temp": 879.1,
+    "oil_pressure": 50.45,
+    "engine_load": 50.66
+  },
+  {
+    "timestamp": "2026-07-18 15:52:52.756178",
+    "coolant_temp": 193.79,
+    "vibration": 0.206,
+    "voltage": 13.98,
+    "exhaust_temp": 962.17,
+    "oil_pressure": 55.12,
+    "engine_load": 60.69
+  },
+  {
+    "timestamp": "2026-07-18 23:52:52.756178",
+    "coolant_temp": 196.18,
+    "vibration": 0.283,
+    "voltage": 13.93,
+    "exhaust_temp": 875.11,
+    "oil_pressure": 52.05,
+    "engine_load": 45.79
+  },
+  {
+    "timestamp": "2026-07-19 07:52:52.756178",
+    "coolant_temp": 189.99,
+    "vibration": 0.271,
+    "voltage": 13.9,
+    "exhaust_temp": 971.35,
+    "oil_pressure": 49.09,
+    "engine_load": 66.4
+  },
+  {
+    "timestamp": "2026-07-19 15:52:52.756178",
+    "coolant_temp": 186.57,
+    "vibration": 0.222,
+    "voltage": 13.81,
+    "exhaust_temp": 888.33,
+    "oil_pressure": 48.57,
+    "engine_load": 38.54
+  },
+  {
+    "timestamp": "2026-07-19 23:52:52.756178",
+    "coolant_temp": 191.89,
+    "vibration": 0.279,
+    "voltage": 13.89,
+    "exhaust_temp": 916.95,
+    "oil_pressure": 53.71,
+    "engine_load": 60.45
+  },
+  {
+    "timestamp": "2026-07-20 07:52:52.756178",
+    "coolant_temp": 188.88,
+    "vibration": 0.236,
+    "voltage": 13.98,
+    "exhaust_temp": 879.25,
+    "oil_pressure": 53.77,
+    "engine_load": 42.38
+  },
+  {
+    "timestamp": "2026-07-20 15:52:52.756178",
+    "coolant_temp": 184.69,
+    "vibration": 0.243,
+    "voltage": 13.93,
+    "exhaust_temp": 878.13,
+    "oil_pressure": 49.7,
+    "engine_load": 45.37
+  },
+  {
+    "timestamp": "2026-07-20 23:52:52.756178",
+    "coolant_temp": 186.49,
+    "vibration": 0.273,
+    "voltage": 13.99,
+    "exhaust_temp": 898.39,
+    "oil_pressure": 49.94,
+    "engine_load": 52.47
+  },
+  {
+    "timestamp": "2026-07-21 07:52:52.756178",
+    "coolant_temp": 191.41,
+    "vibration": 0.266,
+    "voltage": 13.89,
+    "exhaust_temp": 942.11,
+    "oil_pressure": 50.6,
+    "engine_load": 65.06
+  },
+  {
+    "timestamp": "2026-07-21 15:52:52.756178",
+    "coolant_temp": 187.37,
+    "vibration": 0.276,
+    "voltage": 13.92,
+    "exhaust_temp": 910.02,
+    "oil_pressure": 49.55,
+    "engine_load": 45.88
+  },
+  {
+    "timestamp": "2026-07-21 23:52:52.756178",
+    "coolant_temp": 189.19,
+    "vibration": 0.306,
+    "voltage": 13.78,
+    "exhaust_temp": 887.29,
+    "oil_pressure": 48.09,
+    "engine_load": 37.59
+  },
+  {
+    "timestamp": "2026-07-22 07:52:52.756178",
+    "coolant_temp": 192.21,
+    "vibration": 0.305,
+    "voltage": 13.93,
+    "exhaust_temp": 958.98,
+    "oil_pressure": 49.72,
+    "engine_load": 73.72
+  },
+  {
+    "timestamp": "2026-07-22 15:52:52.756178",
+    "coolant_temp": 188.41,
+    "vibration": 0.357,
+    "voltage": 13.92,
+    "exhaust_temp": 893.24,
+    "oil_pressure": 47.07,
+    "engine_load": 44.17
+  },
+  {
+    "timestamp": "2026-07-22 23:52:52.756178",
+    "coolant_temp": 185.15,
+    "vibration": 0.456,
+    "voltage": 13.86,
+    "exhaust_temp": 971.84,
+    "oil_pressure": 47.7,
+    "engine_load": 71.52
+  },
+  {
+    "timestamp": "2026-07-23 07:52:52.756178",
+    "coolant_temp": 190.19,
+    "vibration": 0.471,
+    "voltage": 13.86,
+    "exhaust_temp": 894.41,
+    "oil_pressure": 50.55,
+    "engine_load": 40.21
+  },
+  {
+    "timestamp": "2026-07-23 15:52:52.756178",
+    "coolant_temp": 186.78,
+    "vibration": 0.441,
+    "voltage": 13.95,
+    "exhaust_temp": 949.76,
+    "oil_pressure": 50.04,
+    "engine_load": 55.99
+  },
+  {
+    "timestamp": "2026-07-23 23:52:52.756178",
+    "coolant_temp": 196.17,
+    "vibration": 0.546,
+    "voltage": 13.87,
+    "exhaust_temp": 984.78,
+    "oil_pressure": 47.29,
+    "engine_load": 71.01
+  },
+  {
+    "timestamp": "2026-07-24 07:52:52.756178",
+    "coolant_temp": 188.55,
+    "vibration": 0.588,
+    "voltage": 13.98,
+    "exhaust_temp": 920.21,
+    "oil_pressure": 49.0,
+    "engine_load": 46.95
+  },
+  {
+    "timestamp": "2026-07-24 15:52:52.756178",
+    "coolant_temp": 185.31,
+    "vibration": 0.55,
+    "voltage": 13.91,
+    "exhaust_temp": 953.37,
+    "oil_pressure": 48.59,
+    "engine_load": 60.3
+  },
+  {
+    "timestamp": "2026-07-24 23:52:52.756178",
+    "coolant_temp": 188.72,
+    "vibration": 0.679,
+    "voltage": 13.83,
+    "exhaust_temp": 977.56,
+    "oil_pressure": 48.56,
+    "engine_load": 51.49
+  },
+  {
+    "timestamp": "2026-07-25 07:52:52.756178",
+    "coolant_temp": 193.24,
+    "vibration": 0.653,
+    "voltage": 13.92,
+    "exhaust_temp": 1012.12,
+    "oil_pressure": 50.9,
+    "engine_load": 76.6
+  },
+  {
+    "timestamp": "2026-07-25 15:52:52.756178",
+    "coolant_temp": 188.07,
+    "vibration": 0.689,
+    "voltage": 13.88,
+    "exhaust_temp": 922.78,
+    "oil_pressure": 47.66,
+    "engine_load": 47.37
+  },
+  {
+    "timestamp": "2026-07-25 23:52:52.756178",
+    "coolant_temp": 191.27,
+    "vibration": 0.788,
+    "voltage": 13.9,
+    "exhaust_temp": 961.2,
+    "oil_pressure": 45.78,
+    "engine_load": 44.59
+  },
+  {
+    "timestamp": "2026-07-26 07:52:52.756178",
+    "coolant_temp": 189.76,
+    "vibration": 0.743,
+    "voltage": 13.92,
+    "exhaust_temp": 1053.64,
+    "oil_pressure": 45.79,
+    "engine_load": 76.53
+  },
+  {
+    "timestamp": "2026-07-26 15:52:52.756178",
+    "coolant_temp": 197.77,
+    "vibration": 0.773,
+    "voltage": 13.92,
+    "exhaust_temp": 935.1,
+    "oil_pressure": 48.57,
+    "engine_load": 44.43
+  },
+  {
+    "timestamp": "2026-07-26 23:52:52.756178",
+    "coolant_temp": 190.51,
+    "vibration": 0.882,
+    "voltage": 13.96,
+    "exhaust_temp": 969.71,
+    "oil_pressure": 45.49,
+    "engine_load": 61.35
+  },
+  {
+    "timestamp": "2026-07-27 07:52:52.756178",
+    "coolant_temp": 188.18,
+    "vibration": 0.817,
+    "voltage": 13.94,
+    "exhaust_temp": 993.43,
+    "oil_pressure": 47.45,
+    "engine_load": 55.91
+  },
+  {
+    "timestamp": "2026-07-27 15:52:52.756178",
+    "coolant_temp": 189.28,
+    "vibration": 0.875,
+    "voltage": 13.85,
+    "exhaust_temp": 1017.3,
+    "oil_pressure": 46.72,
+    "engine_load": 60.51
+  },
+  {
+    "timestamp": "2026-07-27 23:52:52.756178",
+    "coolant_temp": 194.56,
+    "vibration": 0.998,
+    "voltage": 13.85,
+    "exhaust_temp": 1021.42,
+    "oil_pressure": 46.22,
+    "engine_load": 62.6
+  },
+  {
+    "timestamp": "2026-07-28 07:52:52.756178",
+    "coolant_temp": 186.46,
+    "vibration": 0.986,
+    "voltage": 13.91,
+    "exhaust_temp": 989.79,
+    "oil_pressure": 46.15,
+    "engine_load": 50.75
+  },
+  {
+    "timestamp": "2026-07-28 15:52:52.756178",
+    "coolant_temp": 188.58,
+    "vibration": 0.951,
+    "voltage": 13.85,
+    "exhaust_temp": 1033.13,
+    "oil_pressure": 44.39,
+    "engine_load": 71.52
+  },
+  {
+    "timestamp": "2026-07-28 23:52:52.756178",
+    "coolant_temp": 191.54,
+    "vibration": 1.066,
+    "voltage": 13.92,
+    "exhaust_temp": 1075.76,
+    "oil_pressure": 47.37,
+    "engine_load": 76.54
+  },
+  {
+    "timestamp": "2026-07-29 07:52:52.756178",
+    "coolant_temp": 189.28,
+    "vibration": 1.045,
+    "voltage": 13.96,
+    "exhaust_temp": 986.51,
+    "oil_pressure": 50.47,
+    "engine_load": 49.44
+  },
+  {
+    "timestamp": "2026-07-29 15:52:52.756178",
+    "coolant_temp": 183.48,
+    "vibration": 1.092,
+    "voltage": 13.9,
+    "exhaust_temp": 1074.43,
+    "oil_pressure": 45.6,
+    "engine_load": 74.6
+  },
+  {
+    "timestamp": "2026-07-29 23:52:52.756178",
+    "coolant_temp": 188.69,
+    "vibration": 1.18,
+    "voltage": 13.85,
+    "exhaust_temp": 1096.77,
+    "oil_pressure": 45.73,
+    "engine_load": 76.41
+  },
+  {
+    "timestamp": "2026-07-30 07:52:52.756178",
+    "coolant_temp": 188.39,
+    "vibration": 1.124,
+    "voltage": 13.99,
+    "exhaust_temp": 1001.29,
+    "oil_pressure": 46.98,
+    "engine_load": 50.11
+  },
+  {
+    "timestamp": "2026-07-30 15:52:52.756178",
+    "coolant_temp": 189.09,
+    "vibration": 1.13,
+    "voltage": 13.95,
+    "exhaust_temp": 1051.33,
+    "oil_pressure": 43.02,
+    "engine_load": 58.14
+  },
+  {
+    "timestamp": "2026-07-30 23:52:52.756178",
+    "coolant_temp": 189.69,
+    "vibration": 1.283,
+    "voltage": 13.96,
+    "exhaust_temp": 998.73,
+    "oil_pressure": 45.97,
+    "engine_load": 50.05
+  },
+  {
+    "timestamp": "2026-07-31 07:52:52.756178",
+    "coolant_temp": 190.72,
+    "vibration": 1.257,
+    "voltage": 13.76,
+    "exhaust_temp": 1120.65,
+    "oil_pressure": 46.84,
+    "engine_load": 82.66
+  },
+  {
+    "timestamp": "2026-07-31 15:52:52.756178",
+    "coolant_temp": 188.04,
+    "vibration": 1.244,
+    "voltage": 13.97,
+    "exhaust_temp": 1136.29,
+    "oil_pressure": 46.86,
+    "engine_load": 83.2
+  },
+  {
+    "timestamp": "2026-07-31 23:52:52.756178",
+    "coolant_temp": 193.94,
+    "vibration": 1.351,
+    "voltage": 13.89,
+    "exhaust_temp": 1035.84,
+    "oil_pressure": 46.9,
+    "engine_load": 58.25
+  },
+  {
+    "timestamp": "2026-08-01 07:52:52.756178",
+    "coolant_temp": 196.51,
+    "vibration": 1.351,
+    "voltage": 13.93,
+    "exhaust_temp": 1099.89,
+    "oil_pressure": 45.66,
+    "engine_load": 78.49
+  },
+  {
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "coolant_temp": 190.58,
+    "vibration": 1.305,
+    "voltage": 13.88,
+    "exhaust_temp": 1066.31,
+    "oil_pressure": 42.78,
+    "engine_load": 67.65
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "id": "TRK-535",
+    "manufacturer": "Volvo",
+    "model": "VNL 860",
+    "year": 2021,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-535",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 42.3,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.6,
+      "EGR/Coolant Leak": 0.0,
+      "Turbocharger Underboost": 0.4,
+      "Electrical System Decay": 0.0
+    },
+    "predicted_rul": 36.9,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": 13.0,
+      "Exhaust Temperature": -49.1,
+      "Vibration & Mechanical": -0.0,
+      "Electrical / Voltage": -0.0,
+      "Oil Pressure": 0.6,
+      "Engine Load / RPM": -37.3
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 190.86,
+      "engine_rpm": 1116.8,
+      "oil_pressure": 48.72,
+      "engine_load": 44.87,
+      "vibration": 0.231,
+      "voltage": 14.01,
+      "exhaust_temp": 904.59
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

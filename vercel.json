@@ -1,14 +1,17 @@
 {
-  "builds": [
+  "rewrites": [
+    { "source": "/api/fleet", "destination": "/static_data/fleet.json" },
+    { "source": "/api/graph", "destination": "/static_data/graph.json" },
+    { "source": "/api/data-source", "destination": "/static_data/data_source.json" }
+  ],
+  "headers": [
     {
-      "src": "backend/app.py",
-      "use": "@vercel/python"
+      "source": "/static_data/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "backend/app.py"
-    }
-  ]
+  "outputDirectory": "frontend"
 }

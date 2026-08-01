@@ -1,5 +1,22 @@
 // DriveMind Fleet Intelligence Client Engine
 
+// Detect if running on Vercel (static mode) vs local FastAPI server
+const IS_STATIC = window.location.hostname.includes('vercel.app');
+
+function apiUrl(path) {
+    if (!IS_STATIC) return path;
+    // Map dynamic API routes to pre-generated static JSON files
+    if (path === '/api/fleet') return '/static_data/fleet.json';
+    if (path === '/api/graph') return '/static_data/graph.json';
+    if (path === '/api/data-source') return '/static_data/data_source.json';
+    // Dynamic vehicle/telemetry routes
+    const vehicleMatch = path.match(/\/api\/vehicle\/(.+)/);
+    if (vehicleMatch) return `/static_data/vehicle_${vehicleMatch[1]}.json`;
+    const telemetryMatch = path.match(/\/api\/telemetry\/(.+)/);
+    if (telemetryMatch) return `/static_data/telemetry_${telemetryMatch[1]}.json`;
+    return path;
+}
+
 let selectedVehicleId = null;
 let telemetryChart = null;
 let shapChart = null;
@@ -166,7 +183,7 @@ function initHeroCanvas() {
 // 2. Fetch Fleet inventory and populate table
 async function fetchFleetInventory() {
     try {
-        const response = await fetch("/api/fleet");
+        const response = await fetch(apiUrl("/api/fleet"));
         const vehicles = await response.json();
         
         const tbody = document.getElementById("fleet-inventory-body");
@@ -281,7 +298,7 @@ async function inspectVehicle(vehicleId) {
     selectedVehicleId = vehicleId;
     
     try {
-        const response = await fetch(`/api/vehicle/${vehicleId}`);
+        const response = await fetch(apiUrl(`/api/vehicle/${vehicleId}`));
         const v = await response.json();
         
         // Update Info Labels
@@ -319,7 +336,7 @@ async function inspectVehicle(vehicleId) {
         renderShapChart(v.diagnostics.feature_attributions);
         
         // Load and plot telemetry history
-        const tResponse = await fetch(`/api/telemetry/${vehicleId}`);
+        const tResponse = await fetch(apiUrl(`/api/telemetry/${vehicleId}`));
         const telemetry = await tResponse.json();
         renderTelemetryChart(telemetry);
         
@@ -395,7 +412,7 @@ function renderShapChart(attributions) {
 // 7. Load and visualize Vis.js Knowledge Graph
 async function fetchKnowledgeGraph() {
     try {
-        const response = await fetch("/api/graph");
+        const response = await fetch(apiUrl("/api/graph"));
         const graphData = await response.json();
         
         // Save nodes mapping for quick lookup on select
@@ -527,6 +544,20 @@ async function submitQuestion(query) {
             <p>Planner parsing intent...</p>
         </div>
     `;
+    
+    if (IS_STATIC) {
+        // In static deployment, Q&A requires the live backend
+        const systemMsg = document.createElement("div");
+        systemMsg.className = "message system-msg";
+        systemMsg.innerHTML = `
+            <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+            <div class="msg-content"><p><strong>Live Q&A requires the backend server.</strong><br>The multi-agent reasoning pipeline runs on the FastAPI backend which is not available in this static demo deployment. Run <code>python run_local.py</code> locally to use the full Q&A console.</p></div>
+        `;
+        chatContainer.appendChild(systemMsg);
+        trailSteps.innerHTML = '<div class="empty-trail"><p>Static deployment — agent pipeline offline</p></div>';
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+        return;
+    }
     
     try {
         const response = await fetch("/api/diagnose", {
@@ -665,7 +696,7 @@ function escapeHtml(text) {
 // 10. Data Source Badge
 async function fetchDataSource() {
     try {
-        const resp = await fetch("/api/data-source");
+        const resp = await fetch(apiUrl("/api/data-source"));
         const ds   = await resp.json();
         
         const header = document.querySelector(".header-tagline");

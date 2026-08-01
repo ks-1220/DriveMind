@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "id": "TRK-589",
+    "manufacturer": "Kenworth",
+    "model": "T680",
+    "year": 2022,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-589",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 41.8,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.7,
+      "EGR/Coolant Leak": 0.1,
+      "Turbocharger Underboost": 0.0,
+      "Electrical System Decay": 0.2
+    },
+    "predicted_rul": 38.2,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": -0.2,
+      "Exhaust Temperature": 93.9,
+      "Vibration & Mechanical": -0.0,
+      "Electrical / Voltage": -0.0,
+      "Oil Pressure": 0.9,
+      "Engine Load / RPM": 5.1
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 189.14,
+      "engine_rpm": 1213.86,
+      "oil_pressure": 47.83,
+      "engine_load": 56.85,
+      "vibration": 0.209,
+      "voltage": 13.96,
+      "exhaust_temp": 916.71
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

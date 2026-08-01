@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "id": "TRK-643",
+    "manufacturer": "Mack",
+    "model": "Anthem",
+    "year": 2024,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-643",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 39.9,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.8,
+      "EGR/Coolant Leak": 0.0,
+      "Turbocharger Underboost": 0.2,
+      "Electrical System Decay": 0.0
+    },
+    "predicted_rul": 39.1,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": -15.7,
+      "Exhaust Temperature": 25.0,
+      "Vibration & Mechanical": -0.0,
+      "Electrical / Voltage": -0.0,
+      "Oil Pressure": 1.0,
+      "Engine Load / RPM": -58.2
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 191.21,
+      "engine_rpm": 1103.33,
+      "oil_pressure": 48.41,
+      "engine_load": 66.48,
+      "vibration": 0.206,
+      "voltage": 13.91,
+      "exhaust_temp": 914.73
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

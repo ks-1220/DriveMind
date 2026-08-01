@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "id": "TRK-427",
+    "manufacturer": "Freightliner",
+    "model": "Cascadia",
+    "year": 2024,
+    "status": "Warning"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-427",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 70.5,
+    "failure_class": "EGR/Coolant Leak",
+    "failure_probabilities": {
+      "Healthy": 0.3,
+      "EGR/Coolant Leak": 99.6,
+      "Turbocharger Underboost": 0.0,
+      "Electrical System Decay": 0.0
+    },
+    "predicted_rul": 6.9,
+    "status": "Critical",
+    "feature_attributions": {
+      "Coolant Temperature": 20.0,
+      "Exhaust Temperature": 77.3,
+      "Vibration & Mechanical": 0.0,
+      "Electrical / Voltage": 0.0,
+      "Oil Pressure": 0.4,
+      "Engine Load / RPM": 2.4
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 225.23,
+      "engine_rpm": 1275.89,
+      "oil_pressure": 39.36,
+      "engine_load": 44.74,
+      "vibration": 0.293,
+      "voltage": 13.86,
+      "exhaust_temp": 1113.34
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-07-24",
+      "component": "Cooling System",
+      "description": "Driver reported minor coolant warning. Topped off coolant reservoir (1.5 gal). Visual check did not reveal leaks.",
+      "cost": 150.0
+    },
+    {
+      "date": "2026-07-12",
+      "component": "Cooling System",
+      "description": "Preventive maintenance. Flushed cooling system, pressure tested radiator cap. Checked OK.",
+      "cost": 420.0
+    },
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

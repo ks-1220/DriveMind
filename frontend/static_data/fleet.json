@@ -1,0 +1,102 @@
+[
+  {
+    "id": "TRK-427",
+    "manufacturer": "Freightliner",
+    "model": "Cascadia",
+    "year": 2024,
+    "status": "Warning",
+    "predicted_rul": 6.9,
+    "anomaly_score": 70.5,
+    "failure_class": "EGR/Coolant Leak"
+  },
+  {
+    "id": "TRK-454",
+    "manufacturer": "Kenworth",
+    "model": "T680",
+    "year": 2022,
+    "status": "Warning",
+    "predicted_rul": 2.0,
+    "anomaly_score": 71.7,
+    "failure_class": "Turbocharger Underboost"
+  },
+  {
+    "id": "TRK-481",
+    "manufacturer": "Peterbilt",
+    "model": "Model 579",
+    "year": 2024,
+    "status": "Warning",
+    "predicted_rul": 4.7,
+    "anomaly_score": 61.3,
+    "failure_class": "Electrical System Decay"
+  },
+  {
+    "id": "TRK-400",
+    "manufacturer": "Volvo",
+    "model": "VNL 860",
+    "year": 2023,
+    "status": "Healthy",
+    "predicted_rul": 40.7,
+    "anomaly_score": 39.9,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-508",
+    "manufacturer": "Mack",
+    "model": "Anthem",
+    "year": 2024,
+    "status": "Healthy",
+    "predicted_rul": 39.2,
+    "anomaly_score": 49.2,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-535",
+    "manufacturer": "Volvo",
+    "model": "VNL 860",
+    "year": 2021,
+    "status": "Healthy",
+    "predicted_rul": 36.9,
+    "anomaly_score": 42.3,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-562",
+    "manufacturer": "Freightliner",
+    "model": "Cascadia",
+    "year": 2022,
+    "status": "Healthy",
+    "predicted_rul": 34.9,
+    "anomaly_score": 39.2,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-589",
+    "manufacturer": "Kenworth",
+    "model": "T680",
+    "year": 2022,
+    "status": "Healthy",
+    "predicted_rul": 38.2,
+    "anomaly_score": 41.8,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-616",
+    "manufacturer": "Peterbilt",
+    "model": "Model 579",
+    "year": 2022,
+    "status": "Healthy",
+    "predicted_rul": 38.1,
+    "anomaly_score": 39.8,
+    "failure_class": "Healthy"
+  },
+  {
+    "id": "TRK-643",
+    "manufacturer": "Mack",
+    "model": "Anthem",
+    "year": 2024,
+    "status": "Healthy",
+    "predicted_rul": 39.1,
+    "anomaly_score": 39.9,
+    "failure_class": "Healthy"
+  }
+]

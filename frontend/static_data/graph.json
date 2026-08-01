@@ -1,0 +1,980 @@
+{
+  "nodes": [
+    {
+      "id": "Engine",
+      "label": "Engine",
+      "group": "Component",
+      "properties": {
+        "description": "Heavy Duty Drivetrain Engine Assembly"
+      }
+    },
+    {
+      "id": "Cooling System",
+      "label": "Cooling System",
+      "group": "Component",
+      "properties": {
+        "description": "Radiator, Thermostat, and EGR Cooling Core"
+      }
+    },
+    {
+      "id": "Turbocharger",
+      "label": "Turbocharger",
+      "group": "Component",
+      "properties": {
+        "description": "Variable Geometry Turbo and Compressor"
+      }
+    },
+    {
+      "id": "Electrical",
+      "label": "Electrical",
+      "group": "Component",
+      "properties": {
+        "description": "Alternator, Battery Banks, and Starter Motor"
+      }
+    },
+    {
+      "id": "Fuel Injector",
+      "label": "Fuel Injector",
+      "group": "Component",
+      "properties": {
+        "description": "High Pressure Common Rail Injectors"
+      }
+    },
+    {
+      "id": "P0128",
+      "label": "P0128: Coolant Temp Below Threshold",
+      "group": "FaultCode",
+      "properties": {
+        "description": "P0128: Coolant Temp Below Threshold"
+      }
+    },
+    {
+      "id": "P0299",
+      "label": "P0299: Turbocharger Underboost",
+      "group": "FaultCode",
+      "properties": {
+        "description": "P0299: Turbocharger Underboost"
+      }
+    },
+    {
+      "id": "P0562",
+      "label": "P0562: Alternator System Voltage Low",
+      "group": "FaultCode",
+      "properties": {
+        "description": "P0562: Alternator System Voltage Low"
+      }
+    },
+    {
+      "id": "P0300",
+      "label": "P0300: Engine Misfire Detected",
+      "group": "FaultCode",
+      "properties": {
+        "description": "P0300: Engine Misfire Detected"
+      }
+    },
+    {
+      "id": "P026A",
+      "label": "P026A: Charge Air Cooler Efficiency Low",
+      "group": "FaultCode",
+      "properties": {
+        "description": "P026A: Charge Air Cooler Efficiency Low"
+      }
+    },
+    {
+      "id": "TRK-400",
+      "label": "Volvo TRK-400",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Volvo",
+        "model": "VNL 860",
+        "year": 2023,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-427",
+      "label": "Freightliner TRK-427",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Freightliner",
+        "model": "Cascadia",
+        "year": 2024,
+        "status": "Warning"
+      }
+    },
+    {
+      "id": "TRK-454",
+      "label": "Kenworth TRK-454",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Kenworth",
+        "model": "T680",
+        "year": 2022,
+        "status": "Warning"
+      }
+    },
+    {
+      "id": "TRK-481",
+      "label": "Peterbilt TRK-481",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Peterbilt",
+        "model": "Model 579",
+        "year": 2024,
+        "status": "Warning"
+      }
+    },
+    {
+      "id": "TRK-508",
+      "label": "Mack TRK-508",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Mack",
+        "model": "Anthem",
+        "year": 2024,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-535",
+      "label": "Volvo TRK-535",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Volvo",
+        "model": "VNL 860",
+        "year": 2021,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-562",
+      "label": "Freightliner TRK-562",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Freightliner",
+        "model": "Cascadia",
+        "year": 2022,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-589",
+      "label": "Kenworth TRK-589",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Kenworth",
+        "model": "T680",
+        "year": 2022,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-616",
+      "label": "Peterbilt TRK-616",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Peterbilt",
+        "model": "Model 579",
+        "year": 2022,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "TRK-643",
+      "label": "Mack TRK-643",
+      "group": "Vehicle",
+      "properties": {
+        "manufacturer": "Mack",
+        "model": "Anthem",
+        "year": 2024,
+        "status": "Healthy"
+      }
+    },
+    {
+      "id": "MNT-0001",
+      "label": "Repair MNT-0001",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0002",
+      "label": "Repair MNT-0002",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-05-03",
+        "component": "Brakes",
+        "description": "Replaced front axle brake pads and inspected brake drums.",
+        "cost": 650.0
+      }
+    },
+    {
+      "id": "MNT-0003",
+      "label": "Repair MNT-0003",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0004",
+      "label": "Repair MNT-0004",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-07-12",
+        "component": "Cooling System",
+        "description": "Preventive maintenance. Flushed cooling system, pressure tested radiator cap. Checked OK.",
+        "cost": 420.0
+      }
+    },
+    {
+      "id": "MNT-0005",
+      "label": "Repair MNT-0005",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-07-24",
+        "component": "Cooling System",
+        "description": "Driver reported minor coolant warning. Topped off coolant reservoir (1.5 gal). Visual check did not reveal leaks.",
+        "cost": 150.0
+      }
+    },
+    {
+      "id": "MNT-0006",
+      "label": "Repair MNT-0006",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0007",
+      "label": "Repair MNT-0007",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-05-03",
+        "component": "Brakes",
+        "description": "Replaced front axle brake pads and inspected brake drums.",
+        "cost": 650.0
+      }
+    },
+    {
+      "id": "MNT-0008",
+      "label": "Repair MNT-0008",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-07-07",
+        "component": "Turbocharger",
+        "description": "Routine intake system inspection. Cleaned charge air cooler hoses.",
+        "cost": 180.0
+      }
+    },
+    {
+      "id": "MNT-0009",
+      "label": "Repair MNT-0009",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0010",
+      "label": "Repair MNT-0010",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-07-14",
+        "component": "Electrical",
+        "description": "Standard battery state-of-health test. Batteries passed conductance test. Cleaned terminals.",
+        "cost": 110.0
+      }
+    },
+    {
+      "id": "MNT-0011",
+      "label": "Repair MNT-0011",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0012",
+      "label": "Repair MNT-0012",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-05-03",
+        "component": "Brakes",
+        "description": "Replaced front axle brake pads and inspected brake drums.",
+        "cost": 650.0
+      }
+    },
+    {
+      "id": "MNT-0013",
+      "label": "Repair MNT-0013",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0014",
+      "label": "Repair MNT-0014",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0015",
+      "label": "Repair MNT-0015",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-05-03",
+        "component": "Brakes",
+        "description": "Replaced front axle brake pads and inspected brake drums.",
+        "cost": 650.0
+      }
+    },
+    {
+      "id": "MNT-0016",
+      "label": "Repair MNT-0016",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0017",
+      "label": "Repair MNT-0017",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "MNT-0018",
+      "label": "Repair MNT-0018",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-05-03",
+        "component": "Brakes",
+        "description": "Replaced front axle brake pads and inspected brake drums.",
+        "cost": 650.0
+      }
+    },
+    {
+      "id": "MNT-0019",
+      "label": "Repair MNT-0019",
+      "group": "Maintenance",
+      "properties": {
+        "date": "2026-04-03",
+        "component": "Engine Oil & Filter",
+        "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+        "cost": 350.0
+      }
+    },
+    {
+      "id": "WRN-0001",
+      "label": "Claim WRN-0001",
+      "group": "Warranty",
+      "properties": {
+        "component": "Drivetrain",
+        "claim_date": "2026-03-04",
+        "cost": 2450.0,
+        "status": "Approved"
+      }
+    },
+    {
+      "id": "WRN-0002",
+      "label": "Claim WRN-0002",
+      "group": "Warranty",
+      "properties": {
+        "component": "Drivetrain",
+        "claim_date": "2026-03-04",
+        "cost": 2450.0,
+        "status": "Approved"
+      }
+    },
+    {
+      "id": "WRN-0003",
+      "label": "Claim WRN-0003",
+      "group": "Warranty",
+      "properties": {
+        "component": "Fuel Injector",
+        "claim_date": "2026-07-07",
+        "cost": 1800.0,
+        "status": "Pending Review"
+      }
+    },
+    {
+      "id": "WRN-0004",
+      "label": "Claim WRN-0004",
+      "group": "Warranty",
+      "properties": {
+        "component": "Drivetrain",
+        "claim_date": "2026-03-04",
+        "cost": 2450.0,
+        "status": "Approved"
+      }
+    },
+    {
+      "id": "WRN-0005",
+      "label": "Claim WRN-0005",
+      "group": "Warranty",
+      "properties": {
+        "component": "Drivetrain",
+        "claim_date": "2026-03-04",
+        "cost": 2450.0,
+        "status": "Approved"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "P0128",
+      "to": "Cooling System",
+      "label": "INDICATES_FAULT_IN"
+    },
+    {
+      "from": "P0299",
+      "to": "Turbocharger",
+      "label": "INDICATES_FAULT_IN"
+    },
+    {
+      "from": "P0562",
+      "to": "Electrical",
+      "label": "INDICATES_FAULT_IN"
+    },
+    {
+      "from": "P0300",
+      "to": "Engine",
+      "label": "INDICATES_FAULT_IN"
+    },
+    {
+      "from": "P026A",
+      "to": "Turbocharger",
+      "label": "INDICATES_FAULT_IN"
+    },
+    {
+      "from": "TRK-400",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-400",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-400",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-400",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-400",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-427",
+      "to": "P0128",
+      "label": "TRIGGERED"
+    },
+    {
+      "from": "TRK-427",
+      "to": "P0300",
+      "label": "TRIGGERED"
+    },
+    {
+      "from": "TRK-454",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-454",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-454",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-454",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-454",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-454",
+      "to": "P0299",
+      "label": "TRIGGERED"
+    },
+    {
+      "from": "TRK-454",
+      "to": "P026A",
+      "label": "TRIGGERED"
+    },
+    {
+      "from": "TRK-481",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-481",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-481",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-481",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-481",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-481",
+      "to": "P0562",
+      "label": "TRIGGERED"
+    },
+    {
+      "from": "TRK-508",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-508",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-508",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-508",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-508",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-535",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-535",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-535",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-535",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-535",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-562",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-562",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-562",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-562",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-562",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-589",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-589",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-589",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-589",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-589",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-616",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-616",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-616",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-616",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-616",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-643",
+      "to": "Engine",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-643",
+      "to": "Cooling System",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-643",
+      "to": "Turbocharger",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-643",
+      "to": "Electrical",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "TRK-643",
+      "to": "Fuel Injector",
+      "label": "HAS_COMPONENT"
+    },
+    {
+      "from": "MNT-0001",
+      "to": "TRK-400",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0001",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0002",
+      "to": "TRK-400",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0002",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0003",
+      "to": "TRK-427",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0003",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0004",
+      "to": "TRK-427",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0004",
+      "to": "Cooling System",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0005",
+      "to": "TRK-427",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0005",
+      "to": "Cooling System",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0006",
+      "to": "TRK-454",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0006",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0007",
+      "to": "TRK-454",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0007",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0008",
+      "to": "TRK-454",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0008",
+      "to": "Turbocharger",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0009",
+      "to": "TRK-481",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0009",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0010",
+      "to": "TRK-481",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0010",
+      "to": "Electrical",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0011",
+      "to": "TRK-508",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0011",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0012",
+      "to": "TRK-508",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0012",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0013",
+      "to": "TRK-535",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0013",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0014",
+      "to": "TRK-562",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0014",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0015",
+      "to": "TRK-562",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0015",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0016",
+      "to": "TRK-589",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0016",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0017",
+      "to": "TRK-616",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0017",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0018",
+      "to": "TRK-616",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0018",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "MNT-0019",
+      "to": "TRK-643",
+      "label": "PERFORMED_ON"
+    },
+    {
+      "from": "MNT-0019",
+      "to": "Engine",
+      "label": "RESOLVED_ISSUE_FOR"
+    },
+    {
+      "from": "WRN-0001",
+      "to": "TRK-400",
+      "label": "FILED_BY"
+    },
+    {
+      "from": "WRN-0002",
+      "to": "TRK-481",
+      "label": "FILED_BY"
+    },
+    {
+      "from": "WRN-0003",
+      "to": "TRK-535",
+      "label": "FILED_BY"
+    },
+    {
+      "from": "WRN-0003",
+      "to": "Fuel Injector",
+      "label": "COVERS_COMPONENT"
+    },
+    {
+      "from": "WRN-0004",
+      "to": "TRK-562",
+      "label": "FILED_BY"
+    },
+    {
+      "from": "WRN-0005",
+      "to": "TRK-643",
+      "label": "FILED_BY"
+    }
+  ]
+}

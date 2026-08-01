@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "id": "TRK-508",
+    "manufacturer": "Mack",
+    "model": "Anthem",
+    "year": 2024,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-508",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 49.2,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.3,
+      "EGR/Coolant Leak": 0.0,
+      "Turbocharger Underboost": 0.6,
+      "Electrical System Decay": 0.0
+    },
+    "predicted_rul": 39.2,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": -0.4,
+      "Exhaust Temperature": -59.9,
+      "Vibration & Mechanical": 0.2,
+      "Electrical / Voltage": 0.0,
+      "Oil Pressure": -1.7,
+      "Engine Load / RPM": -37.8
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 190.28,
+      "engine_rpm": 1086.98,
+      "oil_pressure": 54.82,
+      "engine_load": 39.75,
+      "vibration": 0.298,
+      "voltage": 13.98,
+      "exhaust_temp": 878.28
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-05-03",
+      "component": "Brakes",
+      "description": "Replaced front axle brake pads and inspected brake drums.",
+      "cost": 650.0
+    },
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

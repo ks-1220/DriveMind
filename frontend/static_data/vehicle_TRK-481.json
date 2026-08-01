@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "id": "TRK-481",
+    "manufacturer": "Peterbilt",
+    "model": "Model 579",
+    "year": 2024,
+    "status": "Warning"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-481",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 61.3,
+    "failure_class": "Electrical System Decay",
+    "failure_probabilities": {
+      "Healthy": 0.2,
+      "EGR/Coolant Leak": 0.0,
+      "Turbocharger Underboost": 0.0,
+      "Electrical System Decay": 99.8
+    },
+    "predicted_rul": 4.7,
+    "status": "Critical",
+    "feature_attributions": {
+      "Coolant Temperature": 0.0,
+      "Exhaust Temperature": -53.9,
+      "Vibration & Mechanical": 0.6,
+      "Electrical / Voltage": 3.6,
+      "Oil Pressure": 0.5,
+      "Engine Load / RPM": -41.5
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 187.23,
+      "engine_rpm": 1015.38,
+      "oil_pressure": 48.14,
+      "engine_load": 50.9,
+      "vibration": 0.384,
+      "voltage": 12.27,
+      "exhaust_temp": 880.97
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-07-14",
+      "component": "Electrical",
+      "description": "Standard battery state-of-health test. Batteries passed conductance test. Cleaned terminals.",
+      "cost": 110.0
+    },
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}

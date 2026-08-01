@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "id": "TRK-616",
+    "manufacturer": "Peterbilt",
+    "model": "Model 579",
+    "year": 2022,
+    "status": "Healthy"
+  },
+  "diagnostics": {
+    "vehicle_id": "TRK-616",
+    "timestamp": "2026-08-01 15:52:52.756178",
+    "anomaly_score": 39.8,
+    "failure_class": "Healthy",
+    "failure_probabilities": {
+      "Healthy": 99.8,
+      "EGR/Coolant Leak": 0.1,
+      "Turbocharger Underboost": 0.0,
+      "Electrical System Decay": 0.0
+    },
+    "predicted_rul": 38.1,
+    "status": "Healthy",
+    "feature_attributions": {
+      "Coolant Temperature": 6.9,
+      "Exhaust Temperature": 72.8,
+      "Vibration & Mechanical": 0.1,
+      "Electrical / Voltage": -0.0,
+      "Oil Pressure": 0.7,
+      "Engine Load / RPM": -19.5
+    },
+    "raw_sensor_values": {
+      "coolant_temp": 188.51,
+      "engine_rpm": 1148.75,
+      "oil_pressure": 48.4,
+      "engine_load": 66.71,
+      "vibration": 0.291,
+      "voltage": 13.88,
+      "exhaust_temp": 961.7
+    }
+  },
+  "recent_maintenance": [
+    {
+      "date": "2026-05-03",
+      "component": "Brakes",
+      "description": "Replaced front axle brake pads and inspected brake drums.",
+      "cost": 650.0
+    },
+    {
+      "date": "2026-04-03",
+      "component": "Engine Oil & Filter",
+      "description": "Standard PM-A fleet service. Oil changed, filters replaced, fluid levels adjusted.",
+      "cost": 350.0
+    }
+  ]
+}
