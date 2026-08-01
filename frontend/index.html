@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveMind: Knowledge Graph-Powered Fleet Intelligence</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Syne:wght@500;700;800&family=Space+Grotesk:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vis.js for Knowledge Graph -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- ApexCharts for Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation / Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <div class="logo-text">
+                    <h1>DriveMind</h1>
+                    <span>Fleet Intelligence & Predictive Diagnostics</span>
+                </div>
+            </div>
+            <div class="header-right-panel">
+                <div class="header-tagline">
+                    <p>Knowledge Graph–Powered Fleet Intelligence Platform for Explainable Diagnostics and Predictive Analytics</p>
+                </div>
+                <div class="live-viewers">
+                    <span class="viewer-dot"></span>
+                    <span id="viewer-count">42</span> Live Viewers
+                </div>
+            </div>
+        </header>
+
+        <!-- KPI Cards Summary Row -->
+        <section class="kpi-section">
+            <div class="kpi-card" id="kpi-total">
+                <div class="kpi-icon"><i class="fa-solid fa-truck"></i></div>
+                <div class="kpi-info">
+                    <h3>Total Fleet</h3>
+                    <div class="kpi-value" id="val-total-fleet">10</div>
+                </div>
+            </div>
+            <div class="kpi-card healthy" id="kpi-healthy">
+                <div class="kpi-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="kpi-info">
+                    <h3>Healthy Trucks</h3>
+                    <div class="kpi-value" id="val-healthy-fleet">7</div>
+                </div>
+            </div>
+            <div class="kpi-card warning" id="kpi-warning">
+                <div class="kpi-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="kpi-info">
+                    <h3>Warnings</h3>
+                    <div class="kpi-value" id="val-warning-fleet">2</div>
+                </div>
+            </div>
+            <div class="kpi-card critical" id="kpi-critical">
+                <div class="kpi-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                <div class="kpi-info">
+                    <h3>Critical Alerts</h3>
+                    <div class="kpi-value" id="val-critical-fleet">1</div>
+                </div>
+            </div>
+            <div class="kpi-card anomaly" id="kpi-anomalies">
+                <div class="kpi-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="kpi-info">
+                    <h3>Active Anomalies</h3>
+                    <div class="kpi-value" id="val-active-anomalies">3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Selection Menu -->
+        <nav class="app-nav">
+            <button class="nav-tab active" data-tab="tab-hero">
+                <i class="fa-solid fa-sparkles"></i> Overview & System
+            </button>
+            <button class="nav-tab" data-tab="tab-dashboard">
+                <i class="fa-solid fa-chart-line"></i> Fleet Dashboard
+            </button>
+            <button class="nav-tab" data-tab="tab-diagnostics">
+                <i class="fa-solid fa-calculator"></i> Predictive Diagnostics
+            </button>
+            <button class="nav-tab" data-tab="tab-graph">
+                <i class="fa-solid fa-diagram-project"></i> Knowledge Graph
+            </button>
+            <button class="nav-tab" data-tab="tab-qa">
+                <i class="fa-solid fa-comments-dollar"></i> Multi-Agent Q&A Console
+            </button>
+            <button class="nav-tab" data-tab="tab-evaluation">
+                <i class="fa-solid fa-gauge-high"></i> Evaluation Studio
+            </button>
+        </nav>
+
+        <!-- Main Screen Workspace -->
+        <main class="app-workspace">
+            
+            <!-- Tab 0: Hero / Landing Page -->
+            <div class="workspace-tab active" id="tab-hero">
+                <!-- Hero Main Container -->
+                <div class="hero-container">
+                    <canvas id="hero-canvas"></canvas>
+                    
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span>ENTERPRISE FLEET INTELLIGENCE PLATFORM</span>
+                        </div>
+                        
+                        <h1 class="hero-title" id="scramble-title">DRIVEMIND</h1>
+                        
+                        <p class="hero-subtitle">
+                            A <strong>Knowledge Graph–Powered Multi-Agent RAG Platform</strong> delivering explainable vehicle diagnostics, real-time telemetry analytics, and time-series predictive failure maintenance.
+                        </p>
+                        
+                        <div class="hero-cta-group">
+                            <button class="specular-btn primary-btn" onclick="switchToTab('tab-dashboard')">
+                                <span class="btn-text">LAUNCH PLATFORM DASHBOARD</span>
+                                <i class="fa-solid fa-bolt btn-icon"></i>
+                            </button>
+                            <button class="specular-btn secondary-btn" onclick="scrollToBento()">
+                                <span class="btn-text">EXPLORE ARCHITECTURE</span>
+                                <i class="fa-solid fa-layer-group btn-icon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Live Platform Benchmarks Bar -->
+                        <div class="hero-metrics-bar">
+                            <div class="hero-metric-item">
+                                <span class="metric-val text-green">0.0%</span>
+                                <span class="metric-lbl">Hallucination Rate</span>
+                            </div>
+                            <div class="hero-metric-divider"></div>
+                            <div class="hero-metric-item">
+                                <span class="metric-val text-cyan">0.420</span>
+                                <span class="metric-lbl">Retrieval MRR@5</span>
+                            </div>
+                            <div class="hero-metric-divider"></div>
+                            <div class="hero-metric-item">
+                                <span class="metric-val text-indigo">85.0%</span>
+                                <span class="metric-lbl">Grounding Faithfulness</span>
+                            </div>
+                            <div class="hero-metric-divider"></div>
+                            <div class="hero-metric-item">
+                                <span class="metric-val text-amber">&lt;180ms</span>
+                                <span class="metric-lbl">SQL &amp; Graph Latency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Magic Bento Architecture Grid -->
+                <div class="bento-section" id="architecture-bento">
+                    <div class="bento-header">
+                        <h2>System Architecture &amp; Intelligence Stack</h2>
+                        <p>Enterprise data engineering combined with hybrid retrieval and autonomous multi-agent reasoning</p>
+                    </div>
+
+                    <div class="magic-bento-grid">
+                        <!-- Bento 1: Telemetry Stream -->
+                        <div class="bento-card bento-wide">
+                            <div class="bento-glow"></div>
+                            <div class="bento-badge"><i class="fa-solid fa-satellite-dish"></i> DATA ENGINEERING</div>
+                            <h3>Real-Time Telemetry &amp; Feature Pipeline</h3>
+                            <p>Continuous sliding window feature extraction across CAN Bus, OBD-II, and Smartcar OEM APIs. Computes rolling thermal variance, vibration load, and oil degradation metrics.</p>
+                            <div class="bento-tags">
+                                <span class="bento-chip">OBD-II / CAN Bus</span>
+                                <span class="bento-chip">Smartcar API</span>
+                                <span class="bento-chip">Pandas Rolling Windows</span>
+                                <span class="bento-chip">Signal Normalizer</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento 2: Hybrid Retrieval -->
+                        <div class="bento-card">
+                            <div class="bento-glow"></div>
+                            <div class="bento-badge"><i class="fa-solid fa-database"></i> HYBRID RETRIEVAL</div>
+                            <h3>SQL + Vector + Knowledge Graph</h3>
+                            <p>Combines structured SQLite queries, dense Qdrant vector retrieval over service manuals, and GraphRAG subgraph traversal.</p>
+                            <div class="bento-tags">
+                                <span class="bento-chip">Qdrant Vector DB</span>
+                                <span class="bento-chip">NetworkX GraphRAG</span>
+                                <span class="bento-chip">SQLite Analytics</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento 3: Predictive ML -->
+                        <div class="bento-card">
+                            <div class="bento-glow"></div>
+                            <div class="bento-badge"><i class="fa-solid fa-brain"></i> TIME-SERIES ML</div>
+                            <h3>Anomaly Detection &amp; SHAP RUL</h3>
+                            <p>Isolation Forest isolation scores combined with Gradient Boosted RUL regression and local SHAP feature attribution.</p>
+                            <div class="bento-tags">
+                                <span class="bento-chip">Isolation Forest</span>
+                                <span class="bento-chip">GB RUL Regressor</span>
+                                <span class="bento-chip">SHAP Explainability</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento 4: Multi-Agent Pipeline -->
+                        <div class="bento-card bento-wide">
+                            <div class="bento-glow"></div>
+                            <div class="bento-badge"><i class="fa-solid fa-robot"></i> MULTI-AGENT CHAIN</div>
+                            <h3>5-Step Autonomous Reasoning Engine</h3>
+                            <p>Query Planner → SQL Agent → Retriever Agent → Evidence Verifier → Report Generator. Eliminates hallucination through strict cross-verification.</p>
+                            <div class="bento-pipeline-visual">
+                                <div class="pipe-step"><span class="pipe-num">1</span> Planner</div>
+                                <div class="pipe-arrow">→</div>
+                                <div class="pipe-step"><span class="pipe-num">2</span> SQL Agent</div>
+                                <div class="pipe-arrow">→</div>
+                                <div class="pipe-step"><span class="pipe-num">3</span> Retriever</div>
+                                <div class="pipe-arrow">→</div>
+                                <div class="pipe-step"><span class="pipe-num">4</span> Verifier</div>
+                                <div class="pipe-arrow">→</div>
+                                <div class="pipe-step"><span class="pipe-num">5</span> Report</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 1: Fleet Dashboard -->
+            <div class="workspace-tab" id="tab-dashboard">
+                <div class="dashboard-grid">
+                    <div class="grid-card fleet-list-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-list-check"></i> Fleet Vehicle Inventory</h2>
+                            <span class="card-subtitle">Select a vehicle to inspect sensor telemetry and diagnostic models</span>
+                        </div>
+                        <div class="table-container">
+                            <table class="fleet-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vehicle ID</th>
+                                        <th>Manufacturer</th>
+                                        <th>Model</th>
+                                        <th>Year</th>
+                                        <th>Anomaly Index</th>
+                                        <th>RUL Est.</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="fleet-inventory-body">
+                                    <!-- Dynamic rows loaded via JS -->
+                                    <tr><td colspan="7" class="loading-td">Loading fleet assets...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-card stats-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-chart-pie"></i> SQL Fleet Analytics</h2>
+                            <span class="card-subtitle">Aggregate failure and maintenance metrics from the database</span>
+                        </div>
+                        <div class="charts-row">
+                            <div class="chart-box">
+                                <h3>Failure Warnings by Manufacturer</h3>
+                                <div id="chart-mfr-failures"></div>
+                            </div>
+                            <div class="chart-box">
+                                <h3>Maintenance Cost by Component</h3>
+                                <div id="chart-comp-costs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Predictive Diagnostics -->
+            <div class="workspace-tab" id="tab-diagnostics">
+                <div class="diagnostics-grid">
+                    <!-- Left: Vehicle Summary and Telemetry Charts -->
+                    <div class="left-col">
+                        <div class="grid-card vehicle-summary-card">
+                            <div class="vehicle-profile-header">
+                                <div class="profile-meta">
+                                    <h2 id="inspect-id">TRK-427</h2>
+                                    <span id="inspect-mfr-model">Volvo VNL 860 (2022)</span>
+                                </div>
+                                <div class="profile-status" id="inspect-status-badge">Critical</div>
+                            </div>
+                            <div class="mini-metrics">
+                                <div class="mini-card">
+                                    <span>Remaining Useful Life (RUL)</span>
+                                    <strong id="inspect-rul">14.8 Days</strong>
+                                </div>
+                                <div class="mini-card">
+                                    <span>Anomaly Risk Index</span>
+                                    <strong id="inspect-anomaly">90.5%</strong>
+                                </div>
+                                <div class="mini-card">
+                                    <span>Primary Hazard Mode</span>
+                                    <strong id="inspect-fail-class">EGR/Coolant Leak</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-card telemetry-card">
+                            <div class="card-header">
+                                <h2><i class="fa-solid fa-chart-area"></i> Telemetry Sensor History (OBD-II/CAN Bus)</h2>
+                                <span class="card-subtitle">Time-series streams from the past 30 days</span>
+                            </div>
+                            <div id="chart-telemetry"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right: ML Predictive Models & SHAP explanation -->
+                    <div class="right-col">
+                        <div class="grid-card ml-diagnostics-card">
+                            <div class="card-header">
+                                <h2><i class="fa-solid fa-brain"></i> Machine Learning Diagnostic Diagnostics</h2>
+                                <span class="card-subtitle">Gradient Boosting & Isolation Forest predictions</span>
+                            </div>
+                            
+                            <div class="ml-result-block">
+                                <h3>Failure Classification Probabilities</h3>
+                                <div class="probability-bars" id="failure-prob-container">
+                                    <!-- Dynamic bars -->
+                                </div>
+                            </div>
+
+                            <div class="ml-result-block">
+                                <h3>Local Feature Attribution (SHAP explainability)</h3>
+                                <p class="explanation-note">Shows how much each sensor's current deviation contributed to the predicted failure category.</p>
+                                <div id="chart-shap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Knowledge Graph -->
+            <div class="workspace-tab" id="tab-graph">
+                <div class="graph-workspace">
+                    <div class="graph-view-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-project-diagram"></i> Operational Fleet Knowledge Graph</h2>
+                            <span class="card-subtitle">Trace links between: Vehicles ↔ Components ↔ Fault Codes ↔ Maintenance Records</span>
+                        </div>
+                        <div id="vis-graph-container" style="height: 600px; width: 100%; border-radius: 8px;"></div>
+                    </div>
+                    
+                    <div class="graph-details-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-circle-info"></i> Node Properties</h2>
+                        </div>
+                        <div class="details-content" id="kg-node-details">
+                            <p class="placeholder-text">Click any node in the Knowledge Graph to inspect operational attributes, repair costs, dates, and active linkages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Multi-Agent Q&A Console -->
+            <div class="workspace-tab" id="tab-qa">
+                <div class="qa-workspace">
+                    <!-- Left Sidebar with Example Queries -->
+                    <div class="qa-sidebar">
+                        <h3><i class="fa-solid fa-circle-question"></i> Select Diagnostic Query</h3>
+                        <div class="example-questions">
+                            <button class="btn-question" data-query="Why did Engine #427 fail despite regular maintenance?">
+                                Why did Engine #427 fail despite regular maintenance?
+                            </button>
+                            <button class="btn-question" data-query="Which vehicles are most likely to require maintenance in the next 30 days?">
+                                Which vehicles are most likely to require maintenance in the next 30 days?
+                            </button>
+                            <button class="btn-question" data-query="Compare failure rates and reliability across fleet manufacturers.">
+                                Compare failure rates across manufacturers.
+                            </button>
+                            <button class="btn-question" data-query="Which components fail most often and cost the most to repair?">
+                                Which components fail most often?
+                            </button>
+                            <button class="btn-question" data-query="Show Kenworth electrical charging systems anomalies and alternator voltage drops.">
+                                Show alternator voltage anomalies.
+                            </button>
+                            <button class="btn-question" data-query="Which sensor contributed most to the predicted failure?">
+                                Which sensor contributed most to the failure?
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main Chat Panel -->
+                    <div class="qa-chat-panel">
+                        <!-- Chat Message Feed -->
+                        <div class="chat-container" id="chat-container">
+                            <div class="message system-msg">
+                                <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                                <div class="msg-content">
+                                    <p>Welcome to the **DriveMind Q&A Console**. Select an analytical query from the sidebar or type a custom question below to execute the multi-agent diagnostic cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input bar -->
+                        <div class="chat-input-bar">
+                            <input type="text" id="chat-input" placeholder="Ask about vehicle predictions, anomalies, warranty claims, or repair manuals..." />
+                            <button id="btn-submit-chat"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Agent Execution Trail -->
+                    <div class="qa-agent-trail">
+                        <div class="trail-header">
+                            <h3><i class="fa-solid fa-list-ol"></i> Reasoning Trace</h3>
+                            <span class="subtext">Observe the internal coordination of the agents</span>
+                        </div>
+                        <div class="agent-trail-content" id="agent-trail-steps">
+                            <div class="empty-trail">
+                                <i class="fa-solid fa-spinner fa-spin loading-icon" style="display:none;"></i>
+                                <p>Submit a diagnostic question to view the real-time reasoning steps, SQL compiler code, and GraphRAG operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Evaluation Studio -->
+            <div class="workspace-tab" id="tab-evaluation">
+                <div class="evaluation-workspace">
+                    <div class="eval-header-row">
+                        <div class="eval-title">
+                            <h2><i class="fa-solid fa-square-poll-vertical"></i> RAG & LLM Evaluation Studio</h2>
+                            <p>Benchmark retrieval precision and report generation faithfulness using grounded golden test datasets.</p>
+                        </div>
+                        <button class="btn-run-eval" id="btn-run-eval-suite">
+                            <i class="fa-solid fa-play"></i> Execute Benchmarking
+                        </button>
+                    </div>
+
+                    <!-- Summary Stats Card -->
+                    <div class="eval-summary-grid">
+                        <div class="eval-stat-card">
+                            <h3>Mean Retrieval Precision</h3>
+                            <div class="stat-value" id="val-mean-precision">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Mean Recall@5</h3>
+                            <div class="stat-value" id="val-mean-recall">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Mean nDCG</h3>
+                            <div class="stat-value" id="val-mean-ndcg">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Mean Faithfulness</h3>
+                            <div class="stat-value" id="val-mean-faithfulness">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Mean Groundedness</h3>
+                            <div class="stat-value" id="val-mean-groundedness">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Hallucination Rate</h3>
+                            <div class="stat-value" id="val-mean-hallucination">-</div>
+                        </div>
+                        <div class="eval-stat-card">
+                            <h3>Average Latency</h3>
+                            <div class="stat-value" id="val-mean-latency">-</div>
+                        </div>
+                    </div>
+
+                    <!-- Evaluation Cases Table -->
+                    <div class="grid-card eval-details-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-list"></i> Benchmark Test Cases Results</h2>
+                        </div>
+                        <div class="table-container">
+                            <table class="eval-table">
+                                <thead>
+                                    <tr>
+                                        <th>Evaluation Query</th>
+                                        <th>Precision</th>
+                                        <th>Recall@5</th>
+                                        <th>nDCG</th>
+                                        <th>Faithfulness</th>
+                                        <th>Groundedness</th>
+                                        <th>Hallucination</th>
+                                        <th>Latency</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="eval-table-body">
+                                    <tr><td colspan="8" class="placeholder-td">Click "Execute Benchmarking" above to run the fleet evaluation test suite.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    
+    <!-- Custom JS -->
+    <script src="/static/app.js"></script>
+
+    <!-- ░░ Ghost Cursor — React Bits inspired, pure vanilla canvas ░░ -->
+    <script>
+    (function() {
+        const canvas = document.createElement('canvas');
+        Object.assign(canvas.style, {
+            position: 'fixed', top: 0, left: 0,
+            width: '100vw', height: '100vh',
+            pointerEvents: 'none', zIndex: 99999,
+            mixBlendMode: 'screen',
+        });
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        const COLOR  = [99, 102, 241];   // indigo
+        const TRAIL  = 45;
+        const INERTIA = 0.11;
+
+        let W, H;
+        const mouse   = { x: -999, y: -999 };
+        const current = { x: -999, y: -999 };
+        const trail   = [];
+
+        function resize() {
+            W = canvas.width  = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+        function frame() {
+            current.x += (mouse.x - current.x) * INERTIA;
+            current.y += (mouse.y - current.y) * INERTIA;
+            trail.unshift({ x: current.x, y: current.y });
+            if (trail.length > TRAIL) trail.length = TRAIL;
+
+            ctx.clearRect(0, 0, W, H);
+
+            // Draw trail dots
+            trail.forEach((pt, i) => {
+                const p  = 1 - i / TRAIL;
+                const r  = p * 7;
+                const a  = p * 0.5;
+                ctx.beginPath();
+                ctx.arc(pt.x, pt.y, r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${a})`;
+                ctx.fill();
+            });
+
+            // Glow at cursor tip
+            if (trail.length) {
+                const tip = trail[0];
+                const g = ctx.createRadialGradient(tip.x, tip.y, 0, tip.x, tip.y, 28);
+                g.addColorStop(0, `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0.28)`);
+                g.addColorStop(1, `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0)`);
+                ctx.beginPath();
+                ctx.arc(tip.x, tip.y, 28, 0, Math.PI * 2);
+                ctx.fillStyle = g;
+                ctx.fill();
+            }
+
+            requestAnimationFrame(frame);
+        }
+        frame();
+
+        // ── Click Spark ───────────────────────────────────────────────────
+        window.addEventListener('click', e => {
+            const sparks = Array.from({ length: 8 }, (_, i) => ({
+                x: e.clientX, y: e.clientY,
+                angle: (i / 8) * Math.PI * 2,
+                life: 1,
+                speed: 3 + Math.random() * 2,
+            }));
+            const sc = document.createElement('canvas');
+            Object.assign(sc.style, {
+                position: 'fixed', top: 0, left: 0,
+                width: '100vw', height: '100vh',
+                pointerEvents: 'none', zIndex: 99998,
+            });
+            document.body.appendChild(sc);
+            sc.width  = window.innerWidth;
+            sc.height = window.innerHeight;
+            const sctx = sc.getContext('2d');
+
+            function sparkFrame() {
+                sctx.clearRect(0, 0, sc.width, sc.height);
+                let alive = false;
+                sparks.forEach(s => {
+                    if (s.life <= 0) return;
+                    s.life  -= 0.045;
+                    s.x     += Math.cos(s.angle) * s.speed;
+                    s.y     += Math.sin(s.angle) * s.speed;
+                    if (s.life > 0) {
+                        alive = true;
+                        sctx.beginPath();
+                        sctx.arc(s.x, s.y, s.life * 3.5, 0, Math.PI * 2);
+                        sctx.fillStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${s.life})`;
+                        sctx.fill();
+                    }
+                });
+                if (alive) requestAnimationFrame(sparkFrame);
+                else sc.remove();
+            }
+            sparkFrame();
+        });
+    })();
+    </script>
+</body>
+</html>
