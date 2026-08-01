@@ -1,18 +1,30 @@
 {
+  "version": 2,
   "framework": null,
   "buildCommand": "echo Static build complete",
   "outputDirectory": "frontend",
   "rewrites": [
-    { "source": "/api/fleet", "destination": "/static_data/fleet.json" },
-    { "source": "/api/graph", "destination": "/static_data/graph.json" },
-    { "source": "/api/data-source", "destination": "/static_data/data_source.json" }
+    {
+      "source": "/api/fleet",
+      "destination": "/static_data/fleet.json"
+    },
+    {
+      "source": "/api/graph",
+      "destination": "/static_data/graph.json"
+    },
+    {
+      "source": "/api/data-source",
+      "destination": "/static_data/data_source.json"
+    }
   ],
   "headers": [
     {
       "source": "/static_data/(.*)",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
       ]
     }
   ]
