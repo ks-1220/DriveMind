@@ -25,6 +25,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Lightweight health-check endpoint for platform probes
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 # Global variables to cache operational pipelines
 fleet_data = {}
 vector_db = None
