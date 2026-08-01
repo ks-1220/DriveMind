@@ -114,6 +114,21 @@ def startup_event():
     agent_system = MultiAgentSystem(vector_db, graph_rag, ml_models)
     
     print("DriveMind Startup Sequence successfully finalized!")
+    # Temporary startup debug prints for Railway
+    try:
+        print("STARTUP DEBUG: cwd:", os.getcwd())
+        print("STARTUP DEBUG: FRONTEND_PATH:", FRONTEND_PATH)
+        print("STARTUP DEBUG: FRONTEND_PATH exists:", os.path.exists(FRONTEND_PATH))
+        try:
+            print("STARTUP DEBUG: FRONTEND_PATH contents:", os.listdir(FRONTEND_PATH))
+        except Exception as e:
+            print("STARTUP DEBUG: could not list FRONTEND_PATH:", e)
+        try:
+            print("STARTUP DEBUG: static_data contents:", os.listdir(os.path.join(FRONTEND_PATH, "static_data")))
+        except Exception as e:
+            print("STARTUP DEBUG: could not list static_data:", e)
+    except Exception as e:
+        print("STARTUP DEBUG: failed to print debug info:", e)
 
 @app.get("/api/fleet")
 def get_fleet():
