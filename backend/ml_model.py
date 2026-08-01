@@ -4,7 +4,11 @@ from sklearn.ensemble import IsolationForest, GradientBoostingClassifier, Gradie
 import os
 import pickle
 
-MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
+if os.environ.get("VERCEL"):
+    MODEL_DIR = "/tmp/models"
+else:
+    MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
+
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # Features we use for training our models
