@@ -45,6 +45,23 @@ def startup_event():
     df_v, df_t, df_m, df_w, docs = load_fleet_data()
     
     print("DriveMind: Running data engineering pipeline...")
+    # Temporary debug prints to inspect telemetry DataFrame before engineering
+    if df_t is None:
+        print("Telemetry df is None")
+    else:
+        try:
+            print("Telemetry shape:", df_t.shape)
+            try:
+                print("Telemetry columns:", df_t.columns.tolist())
+            except Exception:
+                print("Telemetry columns: <unavailable>")
+            try:
+                print(df_t.head())
+            except Exception:
+                print("Telemetry head: <unavailable>")
+        except Exception as e:
+            print("Error printing df_t info:", e)
+
     df_engineered_telemetry = engineer_features(df_t)
     df_summaries = compute_telemetry_summaries(df_t)
     

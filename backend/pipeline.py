@@ -52,6 +52,13 @@ def engineer_features(df_telemetry):
     df = clean_telemetry(df_telemetry)
     
     engineered_records = []
+
+    # Debug: log the incoming DataFrame columns/shape before grouping
+    try:
+        print("Pipeline columns:", df.columns.tolist())
+        print("Pipeline shape:", df.shape)
+    except Exception as _:
+        print("Pipeline columns/shape: <unavailable>")
     
     # Process group-by vehicle to keep time series indices intact
     for vehicle_id, group in df.groupby("vehicle_id"):
