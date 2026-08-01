@@ -39,6 +39,12 @@ def clean_telemetry(df_telemetry):
     
     # Fill missing values if any (using forward fill per vehicle)
     df = df.groupby("vehicle_id", group_keys=False).apply(lambda group: group.ffill().bfill())
+
+    # GroupBy.apply can move the grouping key into the index in some pandas versions;
+    # ensure 'vehicle_id' remains a column for downstream processing.
+    if "vehicle_id" not in df.columns and "vehicle_id" in getattr(df.index, 'names', []):
+        df = df.reset_index(level='vehicle_id')
+
     return df
 
 def engineer_features(df_telemetry):
