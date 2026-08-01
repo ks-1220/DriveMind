@@ -25,6 +25,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount assets directory expected in container at /app/frontend/assets
+FRONTEND_PATH = "/app/frontend"
+app.mount(
+    "/assets",
+    StaticFiles(directory=os.path.join(FRONTEND_PATH, "assets")),
+    name="assets"
+)
+
 # Lightweight health-check endpoint for platform probes
 @app.get("/health")
 def health():
@@ -206,12 +214,12 @@ frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fronte
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
     
+from fastapi.responses import FileResponse
+import os
+
     @app.get("/")
-    def read_root():
-        return {
-            "status": "ok",
-            "cwd": os.getcwd(),
-            "frontend_exists": os.path.exists(frontend_path),
-            "index_exists": os.path.exists(os.path.join(frontend_path, "index.html"))
-        }
+    def serve_frontend():
+        return FileResponse(
+            os.path.join(FRONTEND_PATH, "index.html")
+        )
 
