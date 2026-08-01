@@ -2,6 +2,9 @@
 
 // Detect if running on Vercel (static mode) vs local FastAPI server
 const IS_STATIC = window.location.hostname.includes('vercel.app');
+const API_BASE = window.location.hostname.includes('vercel.app')
+    ? "https://drivemind-production-a022.up.railway.app"
+    : "";
 
 function apiUrl(path) {
     if (!IS_STATIC) return path;
@@ -545,22 +548,22 @@ async function submitQuestion(query) {
         </div>
     `;
     
-    if (IS_STATIC) {
-        // In static deployment, Q&A requires the live backend
+    if (!API_BASE) {
+        // Local development still needs the FastAPI backend to be running.
         const systemMsg = document.createElement("div");
         systemMsg.className = "message system-msg";
         systemMsg.innerHTML = `
             <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
-            <div class="msg-content"><p><strong>Live Q&A requires the backend server.</strong><br>The multi-agent reasoning pipeline runs on the FastAPI backend which is not available in this static demo deployment. Run <code>python run_local.py</code> locally to use the full Q&A console.</p></div>
+            <div class="msg-content"><p><strong>Live Q&A requires the backend server.</strong><br>The multi-agent reasoning pipeline runs on the FastAPI backend. Run <code>python run_local.py</code> locally to use the full Q&A console.</p></div>
         `;
         chatContainer.appendChild(systemMsg);
-        trailSteps.innerHTML = '<div class="empty-trail"><p>Static deployment — agent pipeline offline</p></div>';
+        trailSteps.innerHTML = '<div class="empty-trail"><p>Backend not available in this environment</p></div>';
         chatContainer.scrollTop = chatContainer.scrollHeight;
         return;
     }
     
     try {
-        const response = await fetch("/api/diagnose", {
+        const response = await fetch(`${API_BASE}/api/diagnose`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: query })
@@ -618,7 +621,7 @@ function setupEvaluationRunner() {
         tbody.innerHTML = `<tr><td colspan="8" class="loading-td"><i class="fa-solid fa-spinner fa-spin"></i> Running evaluation test cases. This may take a moment...</td></tr>`;
         
         try {
-            const response = await fetch("/api/evaluation");
+            const response = await fetch(`${API_BASE}/api/evaluation`);
             const res = await response.json();
             
             // Set summaries
