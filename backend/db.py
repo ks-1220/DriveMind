@@ -2,16 +2,19 @@ import sqlite3
 import pandas as pd
 import os
 
-if os.environ.get("VERCEL"):
-    DB_PATH = "/tmp/fleet.db"
-else:
-    DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fleet.db")
+DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fleet.db")
 
 def get_db_connection():
     """Returns a connection to the SQLite database."""
-    conn = sqlite3.connect(DB_PATH)
+    if os.environ.get("VERCEL"):
+        # Open in read-only mode in Vercel to avoid journal file creation
+        db_uri = f"file:{DB_PATH}?mode=ro"
+        conn = sqlite3.connect(db_uri, uri=True)
+    else:
+        conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
 
 def init_db(df_vehicles, df_maintenance, df_warranty, df_telemetry_summary=None):
     """Initializes the database schema and seeds it with generated data."""

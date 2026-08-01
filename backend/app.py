@@ -48,20 +48,24 @@ def startup_event():
     df_engineered_telemetry = engineer_features(df_t)
     df_summaries = compute_telemetry_summaries(df_t)
     
-    print("DriveMind: Seeding SQLite structured database...")
-    init_db(df_v, df_m, df_w, df_summaries)
-    
-    print("DriveMind: Training ML diagnostics models...")
-    ml_models = train_ml_models(df_engineered_telemetry)
-    
-    print("DriveMind: Syncing vehicle prediction labels with SQLite status...")
-    for _, row in df_v.iterrows():
-        v_id = row["id"]
-        try:
-            diag = predict_vehicle_diagnostics(v_id, df_engineered_telemetry, ml_models)
-            update_vehicle_status(v_id, diag["status"])
-        except Exception as e:
-            print(f"Failed status synchronization for {v_id}: {e}")
+    if os.environ.get("VERCEL"):
+        print("DriveMind: Vercel detected. Skipping generation. Loading cached models...")
+        ml_models = FleetPredictiveModels.load()
+    else:
+        print("DriveMind: Seeding SQLite structured database...")
+        init_db(df_v, df_m, df_w, df_summaries)
+        
+        print("DriveMind: Training ML diagnostics models...")
+        ml_models = train_ml_models(df_engineered_telemetry)
+        
+        print("DriveMind: Syncing vehicle prediction labels with SQLite status...")
+        for _, row in df_v.iterrows():
+            v_id = row["id"]
+            try:
+                diag = predict_vehicle_diagnostics(v_id, df_engineered_telemetry, ml_models)
+                update_vehicle_status(v_id, diag["status"])
+            except Exception as e:
+                print(f"Failed status synchronization for {v_id}: {e}")
             
     print("DriveMind: Constructing Knowledge Graph...")
     kg = build_knowledge_graph(df_v, df_m, df_w)
