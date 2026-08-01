@@ -7,6 +7,33 @@ def clean_telemetry(df_telemetry):
     and handles outliers or noise.
     """
     df = df_telemetry.copy()
+
+    # Normalize column names (strip whitespace) and accept common alternatives
+    df.columns = [c.strip() if isinstance(c, str) else c for c in df.columns]
+
+    # Accept alternatives for vehicle id and timestamp (robust to upstream key differences)
+    if "vehicle_id" not in df.columns:
+        for alt in ("vehicleId", "vehicle", "veh_id", "id"):
+            if alt in df.columns:
+                df = df.rename(columns={alt: "vehicle_id"})
+                break
+
+    if "timestamp" not in df.columns:
+        for alt in ("time", "ts", "date"):
+            if alt in df.columns:
+                df = df.rename(columns={alt: "timestamp"})
+                break
+
+    # If dataframe is empty or still missing vehicle_id/timestamp, return gracefully
+    if df.empty:
+        # Nothing to engineer — return empty frame
+        return df
+
+    if "vehicle_id" not in df.columns:
+        raise KeyError(f"Telemetry DataFrame missing 'vehicle_id' column. Available columns: {df.columns.tolist()}")
+    if "timestamp" not in df.columns:
+        raise KeyError(f"Telemetry DataFrame missing 'timestamp' column. Available columns: {df.columns.tolist()}")
+
     df["timestamp"] = pd.to_datetime(df["timestamp"])
     df = df.sort_values(by=["vehicle_id", "timestamp"]).reset_index(drop=True)
     
