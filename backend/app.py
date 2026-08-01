@@ -29,7 +29,7 @@ app.add_middleware(
 FRONTEND_PATH = "/app/frontend"
 app.mount(
     "/assets",
-    StaticFiles(directory=os.path.join(FRONTEND_PATH, "assets")),
+    StaticFiles(directory=FRONTEND_PATH)
     name="assets"
 )
 
@@ -213,13 +213,11 @@ def run_evaluation():
 frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
-    
-from fastapi.responses import FileResponse
-import os
 
-    @app.get("/")
-    def serve_frontend():
-        return FileResponse(
-            os.path.join(FRONTEND_PATH, "index.html")
-        )
+# Root route: serve frontend from container path
+@app.get("/")
+def serve_frontend():
+    return FileResponse(
+        os.path.join(FRONTEND_PATH, "index.html")
+    )
 
