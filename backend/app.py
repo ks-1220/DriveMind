@@ -32,9 +32,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRONTEND_PATH = os.path.join(BASE_DIR, "frontend")
 
 app.mount(
-    "/assets",
-    StaticFiles(directory=FRONTEND_PATH)
-    name="assets"
+    "/static",
+    StaticFiles(directory=FRONTEND_PATH),
+    name="static",
 )
 
 # Lightweight health-check endpoint for platform probes
