@@ -6,7 +6,16 @@ def clean_telemetry(df_telemetry):
     Cleans raw telemetry data: checks for nulls, sorts by timestamp, 
     and handles outliers or noise.
     """
+    # Unique version marker to verify deployed code
+    print("========== CLEAN_TELEMETRY VERSION 5 ==========")
+
     df = df_telemetry.copy()
+
+    # Initial debug: columns as received
+    try:
+        print("1:", df.columns.tolist())
+    except Exception:
+        print("1: <could not print columns>")
 
     # Normalize column names (strip whitespace) and accept common alternatives
     df.columns = [c.strip() if isinstance(c, str) else c for c in df.columns]
@@ -34,16 +43,44 @@ def clean_telemetry(df_telemetry):
     if "timestamp" not in df.columns:
         raise KeyError(f"Telemetry DataFrame missing 'timestamp' column. Available columns: {df.columns.tolist()}")
 
+    # Convert timestamp and show columns after conversion
     df["timestamp"] = pd.to_datetime(df["timestamp"])
-    df = df.sort_values(by=["vehicle_id", "timestamp"]).reset_index(drop=True)
-    
-    # Fill missing values if any (using forward fill per vehicle)
-    df = df.groupby("vehicle_id", group_keys=False).apply(lambda group: group.ffill().bfill())
+    try:
+        print("2:", df.columns.tolist())
+    except Exception:
+        print("2: <could not print columns after to_datetime>")
 
-    # GroupBy.apply can move the grouping key into the index in some pandas versions;
-    # ensure 'vehicle_id' remains a column for downstream processing.
-    if "vehicle_id" not in df.columns and "vehicle_id" in getattr(df.index, 'names', []):
-        df = df.reset_index(level='vehicle_id')
+    # Sort and reset index
+    df = df.sort_values(by=["vehicle_id", "timestamp"]).reset_index(drop=True)
+    try:
+        print("3:", df.columns.tolist())
+    except Exception:
+        print("3: <could not print columns after sort/reset>")
+
+    # Use transform-based filling to avoid moving grouping key into the index
+    fill_cols = [c for c in df.columns if c != "vehicle_id"]
+    if fill_cols:
+        try:
+            df[fill_cols] = (
+                df.groupby("vehicle_id")[fill_cols]
+                  .transform(lambda s: s.ffill().bfill())
+            )
+        except Exception as e:
+            print("Transform fill failed:", e)
+            # Fallback to groupby.apply if transform unexpectedly fails
+            df = df.groupby("vehicle_id", group_keys=False).apply(lambda group: group.ffill().bfill())
+            if "vehicle_id" not in df.columns and "vehicle_id" in getattr(df.index, 'names', []):
+                df = df.reset_index(level='vehicle_id')
+    else:
+        # Nothing to fill
+        pass
+
+    try:
+        print("4:", df.columns.tolist())
+        print("4 index:", df.index.names)
+        print(df.head())
+    except Exception:
+        print("4: <could not print final debug info>")
 
     return df
 
