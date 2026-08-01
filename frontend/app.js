@@ -548,22 +548,11 @@ async function submitQuestion(query) {
         </div>
     `;
     
-    if (!API_BASE) {
-        // Local development still needs the FastAPI backend to be running.
-        const systemMsg = document.createElement("div");
-        systemMsg.className = "message system-msg";
-        systemMsg.innerHTML = `
-            <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
-            <div class="msg-content"><p><strong>Live Q&A requires the backend server.</strong><br>The multi-agent reasoning pipeline runs on the FastAPI backend. Run <code>python run_local.py</code> locally to use the full Q&A console.</p></div>
-        `;
-        chatContainer.appendChild(systemMsg);
-        trailSteps.innerHTML = '<div class="empty-trail"><p>Backend not available in this environment</p></div>';
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-        return;
-    }
+    const diagnoseUrl = `${API_BASE}/api/diagnose`;
+    console.log("Calling diagnose API:", diagnoseUrl);
     
     try {
-        const response = await fetch(`${API_BASE}/api/diagnose`, {
+        const response = await fetch(diagnoseUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: query })
