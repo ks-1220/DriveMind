@@ -26,7 +26,11 @@ app.add_middleware(
 )
 
 # Mount assets directory expected in container at /app/frontend/assets
-FRONTEND_PATH = "/app/frontend"
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FRONTEND_PATH = os.path.join(BASE_DIR, "frontend")
+
 app.mount(
     "/assets",
     StaticFiles(directory=FRONTEND_PATH)
